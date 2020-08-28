@@ -4,7 +4,6 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
-
   <main class="site-main">
     <!--================Hero Banner start =================-->
     <section class="mb-30px">
@@ -19,7 +18,6 @@
       </div>
     </section>
     <!--================Hero Banner end =================-->
-
     <!--================ Blog slider start =================-->
     <section>
       <div class="container">
@@ -32,12 +30,14 @@
                     <img class="card-img rounded-0" src="{{post.image_url}}" alt="{{post.title}}">
                   {% else %}
                     <img class="card-img rounded-0" src="{% static 'css/img/banner/blog.png' %}"
-                       alt="Sensive Blog">
+                       alt="">
                   {% endif %}
                 </div>
                 <div class="blog__slide__content">
                   <h3>
-                    <a href="{% url 'post_detail' slug=post.slug %}">{{post.title}}</a>
+                    <a href="{% url 'post_detail' slug=post.slug %}">
+                      {{post.title}}
+                    </a>
                   </h3>
                   <p>{{post.published_at}}</p>
                 </div>
@@ -60,7 +60,7 @@
                   {% if post.image_url %}
                     <img class="img-fluid" src="{{post.image_url}}" alt="{{post.title}}">
                   {% else %}
-                    <img class="img-fluid" src="{% static 'css/img/banner/blog.png' %}" alt="Sensive Blog">
+                    <img class="img-fluid" src="{% static 'css/img/banner/blog.png' %}" alt="">
                   {% endif %}
                     <ul class="thumb-info" style=" max-width: 550px">
                     <li>
@@ -103,9 +103,9 @@
                   <ul class="pagination">
                     <li class="page-item">
                       <a href="#" class="page-link" aria-label="Previous">
-                                                  <span aria-hidden="true">
-                                                      <i class="ti-angle-left"></i>
-                                                  </span>
+                        <span aria-hidden="true">
+                          <i class="ti-angle-left"></i>
+                        </span>
                       </a>
                     </li>
                     <li class="page-item active">
@@ -116,9 +116,9 @@
                     </li>
                     <li class="page-item">
                       <a href="#" class="page-link" aria-label="Next">
-                                        <span aria-hidden="true">
-                                            <i class="ti-angle-right"></i>
-                                        </span>
+                        <span aria-hidden="true">
+                          <i class="ti-angle-right"></i>
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -126,7 +126,6 @@
               </div>
             </div>
           </div>
-
           <!-- Start Blog Post Siddebar -->
           <div class="col-lg-4 sidebar-widgets">
             <div class="widget-wrap">
@@ -141,8 +140,6 @@
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
               </div>
-
-
               <div class="single-sidebar-widget post-category-widget">
                 <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
               </div>
@@ -154,6 +151,5 @@
     </section>
     <!--================ End Blog Post Area =================-->
   </main>
-
 {% endblock %}
 
